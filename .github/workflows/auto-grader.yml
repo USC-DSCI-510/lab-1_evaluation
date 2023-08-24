@@ -20,7 +20,7 @@ jobs:
             - name: GitHub CLI authentication  
               run: gh auth status
 
-            - run: gh classroom assignments -c $ASSIGNMENT_ID
+            - run: gh classroom assignments -c $CLASSROOM_ID
 
 
             
