@@ -9,6 +9,12 @@ on:
 jobs:
     auto_grade:
         runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.CLASSROOM_GITHUB_TOKEN }}
+            CLASSROOM_ID: ${{ vars.CLASSROOM_ID }}
+            ASSIGNMENT_ID: ${{ vars.ASSIGNMENT_ID }}
         steps:
-            - uses: actions/checkout@v3
+            - run: gh classroom assignments -c $ASSIGNMENT_ID
+
+
             
