@@ -17,8 +17,8 @@ jobs:
             - name: Install GitHub Classroom CLI  
               run: gh extension install github/gh-classroom
 
-            - name: Install GitHub Classroom CLI  
-              run: gh auth token
+            - name: GitHub CLI authentication  
+              run: gh auth status
 
             - run: gh classroom assignments -c $ASSIGNMENT_ID
 
