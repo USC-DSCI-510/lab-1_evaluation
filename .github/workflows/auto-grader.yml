@@ -46,7 +46,7 @@ jobs:
 
                   git add .
                   git commit -m "Add testing and grading files"
-                  git push
+                  git push -u origin auto-grader-test
                   
                   cd ..
 
