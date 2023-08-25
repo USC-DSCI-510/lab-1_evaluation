@@ -21,7 +21,7 @@ jobs:
               run: gh auth status
 
             - name: Clone Evaluation Repo
-              run: gh repo clone USC-DSCI-510/lab-1_evaluation -b 2-auto-grading-scripts-workflows
+              run: gh repo clone USC-DSCI-510/lab-1_evaluation --b 2-auto-grading-scripts-workflows
 
             # - name: Clone Assignments
             #   run: gh classroom clone student-repos -a $ASSIGNMENT_ID
