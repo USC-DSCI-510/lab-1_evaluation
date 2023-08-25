@@ -47,10 +47,9 @@ jobs:
 
                   git add .
                   git commit -m "Add testing and grading files"
-                  git pull
                   git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/lab-1-akshaya999.git auto-grader-test
 
-                  gh pr create --base main --head auto-grader-test
+                  gh pr create --base main --head auto-grader-test --title "Auto Grader Bot" --body --token $GITHUB_TOKEN
                   
                   cd ..
               continue-on-error: true
