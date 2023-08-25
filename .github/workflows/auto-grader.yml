@@ -29,17 +29,14 @@ jobs:
             - name: Clone Test Assignments
               run: gh repo clone USC-DSCI-510/lab-1-akshaya999
             
-            # - name: Set Git Configuration
-            #   run: |
-            #     git config --global user.name 'github-actions[bot]'
-            #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            - name: Set Git Configuration
+              run: |
+                git config --global user.name 'KayvanShah1'
+                git config --global user.email 'kpshah@usc.edu'
 
             - name: Copy Grading Files
               run: |
                   cd lab-1-akshaya999
-
-                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  git config user.name "github-actions[bot]"
 
                   git checkout -b auto-grader-test
 
