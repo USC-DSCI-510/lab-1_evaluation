@@ -29,20 +29,20 @@ jobs:
             - name: Clone Test Assignments
               run: gh repo clone USC-DSCI-510/lab-1-akshaya999
             
-            - run: tree
+            - run: gio tree -h
 
             - name: Copy Grading Files
               run: |
                   cd lab-1-akshaya999
 
-                  cp -r ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
-                  cp -r ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-                  cp -r ../lab-1_evaluation/test_functions.py .
+                  cp -r ./lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                  cp -r ./lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
+                  cp -r ./lab-1_evaluation/test_functions.py .
 
                     #   git add .
                     #   git commit -m "Add testing and grading files"
                     #   git push origin master
-                  tree
+                  tree -a
 
                   cd ..
 
