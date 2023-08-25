@@ -21,7 +21,7 @@ jobs:
               run: gh auth status
 
             - name: Clone Evaluation Repo
-              run: gh repo clone USC-DSCI-510/lab-1_evaluation
+              run: gh repo clone USC-DSCI-510/lab-1_evaluation -b 2-auto-grading-scripts-workflows
 
             # - name: Clone Assignments
             #   run: gh classroom clone student-repos -a $ASSIGNMENT_ID
@@ -35,9 +35,9 @@ jobs:
               run: |
                   cd lab-1-akshaya999
 
-                  cp -r ./lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
-                  cp -r ./lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-                  cp -r ./lab-1_evaluation/test_functions.py .
+                  cp -r ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                  cp -r ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
+                  cp -r ../lab-1_evaluation/test_functions.py .
 
                     #   git add .
                     #   git commit -m "Add testing and grading files"
