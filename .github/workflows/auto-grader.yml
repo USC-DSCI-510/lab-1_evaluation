@@ -31,8 +31,8 @@ jobs:
             
             - name: Set Git Configuration
               run: |
-                git config --global user.name 'KayvanShah1'
-                git config --global user.email 'kpshah@usc.edu'
+                git config --global user.email "actions@github.com"
+                git config --global user.name "GitHub Actions"
 
             - name: Copy Grading Files
               run: |
@@ -46,7 +46,7 @@ jobs:
 
                   git add .
                   git commit -m "Add testing and grading files"
-                  git push origin auto-grader-test
+                  git push
                   
                   cd ..
 
