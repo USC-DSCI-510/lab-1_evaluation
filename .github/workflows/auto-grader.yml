@@ -35,15 +35,16 @@ jobs:
               run: |
                   cd lab-1-akshaya999
 
+                  git checkout auto-grader-test
+
                   cp -r ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
                   cp -r ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
                   cp -r ../lab-1_evaluation/test_functions.py .
 
-                    #   git add .
-                    #   git commit -m "Add testing and grading files"
-                    #   git push origin master
-                  tree -a
-
+                  git add .
+                  git commit -m "Add testing and grading files"
+                  git push origin auto-grader-test
+                  
                   cd ..
 
             - name: Cleanup Cloned Repositories
