@@ -10,7 +10,7 @@ jobs:
     auto_grade:
         runs-on: ubuntu-latest
         env:
-            GITHUB_TOKEN: ${{ secrets.CLASSROOM_GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             CLASSROOM_ID: ${{ vars.CLASSROOM_ID }}
             ASSIGNMENT_ID: ${{ vars.ASSIGNMENT_ID }}
         steps:
