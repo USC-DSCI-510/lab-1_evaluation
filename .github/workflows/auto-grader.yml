@@ -13,6 +13,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.CLASSROOM_GITHUB_TOKEN }}
             CLASSROOM_ID: ${{ vars.CLASSROOM_ID }}
             ASSIGNMENT_ID: ${{ vars.ASSIGNMENT_ID }}
+
         steps:
             - name: Install GitHub Classroom CLI  
               run: gh extension install github/gh-classroom
@@ -40,13 +41,13 @@ jobs:
 
                   git checkout -b auto-grader-test
 
-                  cp -r ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
-                  cp -r ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-                  cp -r ../lab-1_evaluation/test_functions.py .
+                  cp ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                  cp ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
+                  cp ../lab-1_evaluation/test_functions.py .
 
                   git add .
                   git commit -m "Add testing and grading files"
-                  git push -u origin auto-grader-test
+                  git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/lab-1-akshaya999.git auto-grader-test
                   
                   cd ..
 
