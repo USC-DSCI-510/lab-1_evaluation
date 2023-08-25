@@ -29,7 +29,10 @@ jobs:
             - name: Clone Test Assignments
               run: gh repo clone USC-DSCI-510/lab-1-akshaya999
             
-            - run: gio tree -h
+            - name: Git Configuration
+              run: |
+                git config user.name 'github-actions[bot]'
+                git config user.email 'github-actions[bot]@users.noreply.github.com'
 
             - name: Copy Grading Files
               run: |
