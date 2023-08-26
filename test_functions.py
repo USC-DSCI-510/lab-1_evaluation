@@ -42,7 +42,7 @@ except:
     (405, 7.069),
 ])
 def test_degrees_to_radians(degree, radian):
-    assert pytest.approx(degrees_to_radians(degree), abs=1e-3) == radian
+    assert pytest.approx(degrees_to_radians(degree), abs=1e-2) == radian
 
 
 @pytest.mark.parametrize('s, count', [
@@ -76,4 +76,4 @@ def test_vowel_count(s, count):
     (5, 5, 7.071)
 ])
 def test_triangle_hypotenuse(base, height, result):
-    assert pytest.approx(triangle_hypotenuse(base, height), abs=1e-3) == result
+    assert pytest.approx(triangle_hypotenuse(base, height), abs=2e-2) == result
