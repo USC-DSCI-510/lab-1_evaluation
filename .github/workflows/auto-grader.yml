@@ -78,11 +78,11 @@ jobs:
                     
                     # git add .
                     # git commit -m "Add testing and grading files"
-                    # git push origin auto-grader-test
+                    # git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$student_repo.git auto-grader-test
                     
                     # gh pr create --base main --head auto-grader-test --title "Auto Grader Bot" --body "Run the auto grading scripts"
 
-                    ls
+                    echo ls
                     
                     cd ..
                   fi
