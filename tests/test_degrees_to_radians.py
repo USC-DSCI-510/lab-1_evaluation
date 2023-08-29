@@ -7,7 +7,7 @@ try:
     # module_path = script_path[2:-3]
     # module = importlib.import_module(module_path)
 
-    SCRIPT_PATH = './../lab1.py'
+    SCRIPT_PATH = './lab1.py'
     module = importlib.import_module(SCRIPT_PATH)
 except:
     raise Exception(
