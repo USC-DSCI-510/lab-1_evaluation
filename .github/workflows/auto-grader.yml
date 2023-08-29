@@ -72,7 +72,7 @@ jobs:
                     
                     git checkout -b auto-grader-test
                     
-                    cp ../../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                    cp ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
                     cp ../../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
                     cp -r ../../lab-1_evaluation/tests/* ./
                     
