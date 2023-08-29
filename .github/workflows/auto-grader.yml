@@ -1,7 +1,10 @@
 name: Master Autograder Workflow
 
 on: 
-    workflow_dispatch:
+  pull_request:
+    branches:
+        - main
+  workflow_dispatch:
 
 jobs:
     auto_grade:
