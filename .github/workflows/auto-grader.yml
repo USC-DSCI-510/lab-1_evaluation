@@ -1,9 +1,9 @@
 name: Master Autograder Workflow
 
 on: 
-  pull_request:
-    branches:
-        - main
+  # pull_request:
+  #   branches:
+  #       - main
   workflow_dispatch:
 
 jobs:
@@ -27,17 +27,14 @@ jobs:
             - name: Clone Assignments
               run: gh classroom clone student-repos -a $ASSIGNMENT_ID
 
-            - name: Clone Test Assignments
-              run: |
-                # mkdir assignments
-                # cd assignments
-                # gh repo clone USC-DSCI-510/lab-1-akshaya999
-                # gh repo clone USC-DSCI-510/lab-1-GreatYYX
-                # gh repo clone USC-DSCI-510/lab-1-saggu
-                echo $(ls)
-                cd ..
-                echo "################################"
-                echo $(ls)
+            # - name: Clone Test Assignments
+            #   run: |
+            #     mkdir assignments
+            #     cd assignments
+            #     gh repo clone USC-DSCI-510/lab-1-akshaya999
+            #     gh repo clone USC-DSCI-510/lab-1-GreatYYX
+            #     gh repo clone USC-DSCI-510/lab-1-saggu
+            #     cd ..
             
             - name: Set Git Configuration
               run: |
@@ -63,33 +60,32 @@ jobs:
             #       cd ..
             #   continue-on-error: true
 
-            # - name: Copy Grading Files and Create Pull Request
-            #   run: |
-            #     cd lab-1-submissions
+            - name: Copy Grading Files and Create Pull Request
+              run: |
+                cd lab-1-submissions
 
-            #     for student_repo in ./*; do
-            #       if [ -d "$student_repo" ]; then
-            #         repo_name=$(basename "$student_repo")
+                for student_repo in ./*; do
+                  if [ -d "$student_repo" ]; then
+                    repo_name=$(basename "$student_repo")
             
-            #         cd "$student_repo"
+                    cd "$student_repo"
                     
-            #         git checkout -b auto-grader-test
+                    git checkout -b auto-grader-test
                     
-            #         cp ../../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
-            #         cp ../../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-            #         cp -r ../../lab-1_evaluation/tests/* ./
+                    cp ../../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                    cp ../../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
+                    cp -r ../../lab-1_evaluation/tests/* ./
                     
-            #         git add .
-            #         git commit -m "Add testing and grading files"
-            #         git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$repo_name.git auto-grader-test
+                    git add .
+                    git commit -m "Add testing and grading files"
+                    git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$repo_name.git auto-grader-test
                     
-            #         gh pr create --base main --head auto-grader-test --title "Auto Grader Bot" --body "Run the auto grading scripts"
+                    gh pr create --base main --head auto-grader-test --title "Auto Grader Bot" --body "Run the auto grading scripts"
                     
-            #         cd ..
-            #       fi
-            #     done
-            #   continue-on-error: true
-            
+                    cd ..
+                  fi
+                done
+              continue-on-error: true
 
             - name: Cleanup Cloned Repositories
               run: |
