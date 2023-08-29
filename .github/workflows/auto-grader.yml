@@ -29,6 +29,7 @@ jobs:
 
             - name: Clone Test Assignments
               run: |
+                mkdir assignments
                 cd assignments
                 gh repo clone USC-DSCI-510/lab-1-akshaya999
                 gh repo clone USC-DSCI-510/lab-1-GreatYYX
