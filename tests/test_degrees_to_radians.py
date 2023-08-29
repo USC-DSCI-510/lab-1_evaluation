@@ -3,12 +3,12 @@ import pytest
 try:
     import glob
     import importlib
-    # script_path = glob.glob('./../lab1.py')[0]
-    # module_path = script_path[2:-3]
-    # module = importlib.import_module(module_path)
+    script_path = glob.glob('./lab1.py')[0]
+    module_path = script_path[2:-3]
+    module = importlib.import_module(module_path)
 
-    SCRIPT_PATH = './lab1.py'
-    module = importlib.import_module(SCRIPT_PATH, package="lab1")
+    # SCRIPT_PATH = './lab1.py'
+    # module = importlib.import_module(SCRIPT_PATH, package="lab1")
 except:
     raise Exception(
         'No script is available. Please follow the assignment instructions.')
