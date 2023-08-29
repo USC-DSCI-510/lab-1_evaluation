@@ -25,7 +25,7 @@ jobs:
               run: gh repo clone USC-DSCI-510/lab-1_evaluation -- -b 2-auto-grading-scripts-workflows
 
             - name: Clone Assignments
-              run: gh classroom clone student-repos -a $ASSIGNMENT_ID --directory assignments
+              run: gh classroom clone student-repos -a $ASSIGNMENT_ID
 
             - name: Clone Test Assignments
               run: |
@@ -63,7 +63,7 @@ jobs:
 
             # - name: Copy Grading Files and Create Pull Request
             #   run: |
-            #     cd assignments
+            #     cd lab-1-submissions
 
             #     for student_repo in ./*; do
             #       if [ -d "$student_repo" ]; then
