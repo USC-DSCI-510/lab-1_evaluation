@@ -64,7 +64,7 @@ jobs:
               run: |
                 cd assignments
 
-                for student_repo in assignments/*; do
+                for student_repo in ./*; do
                   if [ -d "$student_repo" ]; then
                     repo_name=$(basename "$student_repo")
             
@@ -72,7 +72,7 @@ jobs:
                     
                     git checkout -b auto-grader-test
                     
-                    cp ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
+                    cp ../../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
                     cp ../../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
                     cp -r ../../lab-1_evaluation/tests/* ./
                     
@@ -82,7 +82,7 @@ jobs:
                     
                     # gh pr create --base main --head auto-grader-test --title "Auto Grader Bot" --body "Run the auto grading scripts"
 
-                    echo $(ls)
+                    echo ls
                     
                     cd ..
                   fi
