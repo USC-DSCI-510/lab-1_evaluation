@@ -13,12 +13,14 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.CLASSROOM_GITHUB_TOKEN }}
             CLASSROOM_ID: ${{ vars.CLASSROOM_ID }}
             ASSIGNMENT_ID: ${{ vars.ASSIGNMENT_ID }}
+            DEFAULT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ github.token }}
 
         steps:
             - name: Install GitHub Classroom CLI  
               run: gh extension install github/gh-classroom
 
-            - name: GitHub CLI authentication  
+            - name: GitHub CLI authentication status  
               run: gh auth status
 
             - name: Clone Evaluation Repo
@@ -43,9 +45,10 @@ jobs:
 
                   cp ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
                   cp ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-                  cp ../lab-1_evaluation/test_degrees_to_radians.py ./test_degrees_to_radians.py
-                  cp ../lab-1_evaluation/test_vowel_count.py ./test_vowel_count.py
-                  cp ../lab-1_evaluation/test_triangle_hypotenuse.py ./test_triangle_hypotenuse.py
+                  cp -r ../lab-1_evaluation/tests ./
+                  # cp ../lab-1_evaluation/test_degrees_to_radians.py ./test_degrees_to_radians.py
+                  # cp ../lab-1_evaluation/test_vowel_count.py ./test_vowel_count.py
+                  # cp ../lab-1_evaluation/test_triangle_hypotenuse.py ./test_triangle_hypotenuse.py
 
                   git add .
                   git commit -m "Add testing and grading files"
