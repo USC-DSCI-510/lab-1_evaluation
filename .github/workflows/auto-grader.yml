@@ -43,10 +43,7 @@ jobs:
 
                   cp ../lab-1_evaluation/.github/classroom/autograding.json ./.github/classroom/autograding.json
                   cp ../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
-                  cp -r ../lab-1_evaluation/tests ./
-                  # cp ../lab-1_evaluation/test_degrees_to_radians.py ./test_degrees_to_radians.py
-                  # cp ../lab-1_evaluation/test_vowel_count.py ./test_vowel_count.py
-                  # cp ../lab-1_evaluation/test_triangle_hypotenuse.py ./test_triangle_hypotenuse.py
+                  cp -r ../lab-1_evaluation/tests/* ./
 
                   git add .
                   git commit -m "Add testing and grading files"
