@@ -6,7 +6,7 @@ try:
     # script_path = glob.glob('./../lab1.py')[0]
     # module_path = script_path[2:-3]
     SCRIPT_PATH = './lab1.py'
-    module = importlib.import_module(SCRIPT_PATH)
+    module = importlib.import_module(SCRIPT_PATH, package="lab1")
 except:
     raise Exception(
         'No script is available. Please follow the assignment instructions.')

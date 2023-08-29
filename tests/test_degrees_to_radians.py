@@ -8,7 +8,7 @@ try:
     # module = importlib.import_module(module_path)
 
     SCRIPT_PATH = './lab1.py'
-    module = importlib.import_module(SCRIPT_PATH)
+    module = importlib.import_module(SCRIPT_PATH, package="lab1")
 except:
     raise Exception(
         'No script is available. Please follow the assignment instructions.')
