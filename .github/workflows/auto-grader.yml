@@ -13,8 +13,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.CLASSROOM_GITHUB_TOKEN }}
             CLASSROOM_ID: ${{ vars.CLASSROOM_ID }}
             ASSIGNMENT_ID: ${{ vars.ASSIGNMENT_ID }}
-            DEFAULT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            GH_TOKEN: ${{ github.token }}
 
         steps:
             - name: Install GitHub Classroom CLI  
