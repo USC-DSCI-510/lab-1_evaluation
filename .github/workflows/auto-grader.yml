@@ -29,7 +29,7 @@ jobs:
               run: gh repo clone USC-DSCI-510/lab-1_evaluation -- -b 2-auto-grading-scripts-workflows
 
             - name: Clone Assignments
-              run: gh classroom clone student-repos -a $ASSIGNMENT_ID
+              run: gh classroom clone student-repos -a $ASSIGNMENT_ID --per-page 100
 
             # - name: Clone Test Assignments
             #   run: |
