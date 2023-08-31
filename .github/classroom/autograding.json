@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "test_degrees_to_radians",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest test_degrees_to_radians.py",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test_vowel_count",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest test_vowel_count.py",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "test_triangle_hypotenuse",
+      "setup": "sudo -H pip3 install pytest",
+      "run": "pytest test_triangle_hypotenuse.py",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
