@@ -85,10 +85,9 @@ jobs:
                     git commit -m "Add testing and grading files"
                     git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$repo_name.git "$branch_name"
                     
-                    gh pr create --base main --head "$branch_name" --title "Auto Grader Bot" --body "Run the auto grading scripts"
+                    # gh pr create --base main --head "$branch_name" --title "Auto Grader Bot" --body "Run the auto grading scripts"
                     
                     cd ..
-                    sleep 5
                   fi
                 done
               continue-on-error: true
