@@ -1,9 +1,9 @@
 name: Master Autograder Workflow
 
 on: 
-  # pull_request:
-  #   branches:
-  #       - main
+  pull_request:
+    branches:
+        - main
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
               run: gh auth status
 
             - name: Clone Evaluation Repo
-              run: gh repo clone USC-DSCI-510/lab-1_evaluation #-- -b 2-auto-grading-scripts-workflows
+              run: gh repo clone USC-DSCI-510/lab-1_evaluation -- -b 2-auto-grading-scripts-workflows
 
             - name: Clone Assignments
               run: gh classroom clone student-repos -a $ASSIGNMENT_ID
@@ -81,11 +81,11 @@ jobs:
                     cp ../../lab-1_evaluation/.github/workflows/classroom.yml ./.github/workflows/classroom.yml
                     cp -r ../../lab-1_evaluation/tests/* ./
                     
-                    git add .
-                    git commit -m "Add testing and grading files"
-                    git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$repo_name.git auto-grader-test
+                    # git add .
+                    # git commit -m "Add testing and grading files"
+                    # git push https://$GITHUB_TOKEN@github.com/USC-DSCI-510/$repo_name.git auto-grader-test
                     
-                    gh pr create --base main --head "$branch_name" --title "Auto Grader Bot" --body "Run the auto grading scripts"
+                    # gh pr create --base main --head "$branch_name" --title "Auto Grader Bot" --body "Run the auto grading scripts"
                     
                     cd ..
                   fi
